@@ -1,0 +1,23 @@
+<ion-view ng-controller="LoginCtrl" view-title="VIP产品设计部工作系统">
+	<ion-content class="loginPage padding">
+		<div class="logo"><em>VIP</em> Todo</div>
+
+		<div class="list">
+
+			<label class="item-input">
+				<input type="text" ng-model="userName" placeholder="用户名">
+			</label>
+			<label class=" item-input">
+				<input type="password" ng-model="password" placeholder="密码">
+			</label>
+			
+			
+			
+		</div>
+		<div class="save-pw">
+			<ion-toggle  ng-model="settings.enableFriends">记住密码</ion-toggle>
+		</div>
+		<button class="button button-block button-positive" ng-click="login()">登录</button>
+		<button class="button button-assertive button-block" ng-click="login()">注册</button>
+	</ion-content>
+</ion-view>

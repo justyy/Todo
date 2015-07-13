@@ -1,1 +1,9 @@
 /* Empty. Add your own CSS if you like */
+
+.bar-stable{display: none;}
+.logo{text-align: center; font:normal 24px/43px "Microsoft YaHei"; padding: 10px 0;}
+.logo em{color: #f10180}
+
+.loginPage .item-input{border-bottom: solid 1px #ddd}
+.loginPage .toggle-large{border: 0 none;}
+.save-pw span{color: #111; font-size: 12px;}
