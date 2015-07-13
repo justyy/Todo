@@ -6,4 +6,5 @@
 
 .loginPage .item-input{border-bottom: solid 1px #ddd}
 .loginPage .toggle-large{border: 0 none;}
-.save-pw span{color: #111; font-size: 12px;}
+.save-pw span{color: #111; font-size: 14px;}
+.loginPage .other-info{text-align: center; display: block; font:normal 16px/45px "Microsoft YaHei"; margin: 10px 0}
