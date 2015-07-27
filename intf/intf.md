@@ -1,16 +1,17 @@
 # 工单系统接口列表 
-----------
- 
-## 注册接口
 
  - 地址：[/interface](/interface "注册接口")
  - 方式：POST 或 GET
  - 返回数据类型：json or jsonp
+
+----------
+## 注册接口
  - 描述：注册新用户
  - 传入参数： <table>
 				<thead>
 					<tr>
 						<th>参数</th>
+						<th>类型</th>
 						<th>必填</th>
 						<th>说明</th>
 					</tr>
@@ -18,51 +19,61 @@
 				<tbody>
 					<tr>
 						<td>act</td>
+						<td>String</td>
 						<td>是</td>
 						<td>regist</td>
 					</tr>
 					<tr>
 						<td>name</td>
+						<td>String</td>
 						<td>是</td>
 						<td>用户名。用户名只能是字母数字下划线和小数点！</td>
 					</tr>
 					<tr>
 						<td>p1</td>
+						<td>String</td>
 						<td>是</td>
 						<td>密码。密码长度在6~11之间，只能包含字符、数字和下划线</td>
 					</tr>
 					<tr>
 						<td>nick</td>
+						<td>String</td>
 						<td>是</td>
 						<td>真实姓名。只能填写中文姓名</td>
 					</tr>
 					<tr>
 						<td>phone</td>
+						<td>String</td>
 						<td>是</td>
 						<td>手机电话必须11位。</td>
 					</tr>
 					<tr>
 						<td>mail</td>
+						<td>String</td>
 						<td>是</td>
 						<td>公司邮箱</td>
 					</tr>
 					<tr>
 						<td>team</td>
+						<td>String</td>
 						<td>是</td>
 						<td>1:交互组，2：设计组，3：前端组，5：多app组</td>
 					</tr>
 					<tr>
 						<td>sendMail</td>
+						<td>Number</td>
 						<td>是</td>
 						<td>是否需要邮件提醒功能。0：不需要；1：需要</td>
 					</tr>
 					<tr>
 						<td>ts</td>
+						<td>Number</td>
 						<td>是</td>
 						<td>时间戳。传值+new Date()即可</td>
 					</tr>
 					<tr>
 						<td>callback</td>
+						<td>Function</td>
 						<td>否</td>
 						<td>jsonp</td>
 					</tr>
@@ -72,30 +83,36 @@
 				<thead>
 					<tr>
 						<th>参数</th>
+						<th>类型</th>
 						<th>说明</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td>status</td>
+						<td>Number</td>
 						<td>0为失败，1为成功</td>
 					</tr>
 					<tr>
+						<td>user</td>
+						<td>object</td>
+						<td>{username: 用户名, password: 密码} 根据返回的数据填充登录输入框</td>
+					</tr>
+					<tr>
 						<td>message</td>
+						<td>String</td>
 						<td>错误提示</td>
 					</tr>
 				</tbody>
 			</table>
 
 ## 登录接口
- - 地址：[/interface](/interface "注册接口")
- - 方式：POST 或 GET
- - 返回数据类型：json or jsonp
  - 描述：用户登录
  - 传入参数： <table>
 				<thead>
 					<tr>
 						<th>参数</th>
+						<th>类型</th>
 						<th>必填</th>
 						<th>说明</th>
 					</tr>
@@ -103,31 +120,37 @@
 				<tbody>
 					<tr>
 						<td>act</td>
+						<td>String</td>
 						<td>是</td>
 						<td>login</td>
 					</tr>
 					<tr>
 						<td>username</td>
+						<td>String</td>
 						<td>是</td>
 						<td>用户名。</td>
 					</tr>
 					<tr>
 						<td>password</td>
+						<td>String</td>
 						<td>是</td>
 						<td>密码。</td>
 					</tr>
 					<tr>
 						<td>remark</td>
+						<td>Number</td>
 						<td>否</td>
 						<td>是否需要记录登录状态。值为1则保存登录cookie，为0则不保存。</td>
 					</tr>
 					<tr>
 						<td>ts</td>
+						<td>Number</td>
 						<td>是</td>
 						<td>时间戳。传值+new Date()即可</td>
 					</tr>
 					<tr>
 						<td>callback</td>
+						<td>Function</td>
 						<td>否</td>
 						<td>jsonp</td>
 					</tr>
@@ -137,31 +160,31 @@
 				<thead>
 					<tr>
 						<th>参数</th>
+						<td>类型</td>
 						<th>说明</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td>status</td>
+						<td>Number</td>
 						<td>0为失败，1为成功</td>
 					</tr>
 					<tr>
 						<td>message</td>
+						<td>String</td>
 						<td>错误提示</td>
 					</tr>
 				</tbody>
 			</table>
 
 ## 登出接口
-
- - 地址：[/interface](/interface "注册接口")
- - 方式：POST 或 GET
- - 返回数据类型：json or jsonp
  - 描述：用户退出登录状态
  - 传入参数： <table>
 				<thead>
 					<tr>
 						<th>参数</th>
+						<td>类型</td>
 						<th>必填</th>
 						<th>说明</th>
 					</tr>
@@ -169,16 +192,19 @@
 				<tbody>
 					<tr>
 						<td>act</td>
+						<td>String</td>
 						<td>是</td>
 						<td>logout</td>
 					</tr>
 					<tr>
 						<td>ts</td>
+						<td>Number</td>
 						<td>是</td>
 						<td>时间戳。传值+new Date()即可</td>
 					</tr>
 					<tr>
 						<td>callback</td>
+						<td>Function</td>
 						<td>否</td>
 						<td>jsonp</td>
 					</tr>
@@ -188,19 +214,369 @@
 				<thead>
 					<tr>
 						<th>参数</th>
+						<td>类型</td>
 						<th>说明</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td>status</td>
+						<td>Number</td>
 						<td>0为失败，1为成功</td>
 					</tr>
 					<tr>
 						<td>message</td>
+						<td>String</td>
 						<td>提示</td>
 					</tr>
 				</tbody>
 			</table>
 
 ## 获取用户信息
+ - 描述：获取用户详细信息
+ - 传入参数： <table>
+				<thead>
+					<tr>
+						<th>参数</th>
+						<td>类型</td>
+						<th>必填</th>
+						<th>说明</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>act</td>
+						<td>String</td>
+						<td>是</td>
+						<td>getuser</td>
+					</tr>
+					<tr>
+						<td>uid</td>
+						<td>String</td>
+						<td>否</td>
+						<td>为空则返回自己的信息，可以通过传入id返回对应id的信息#例1,2,3,4则返回id为1，2，3，4的信息#，传入 all 则返回所有用户信息，</td>
+					</tr>
+					<tr>
+						<td>ts</td>
+						<td>Number</td>
+						<td>是</td>
+						<td>时间戳。传值+new Date()即可</td>
+					</tr>
+					<tr>
+						<td>callback</td>
+						<td>Function</td>
+						<td>否</td>
+						<td>jsonp</td>
+					</tr>
+				</tbody>
+			</table>
+ - 返回数据：<table>
+				<thead>
+					<tr>
+						<th>参数</th>
+						<td>类型</td>
+						<th>说明</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>status</td>
+						<td>Number</td>
+						<td>0为失败，1为成功</td>
+					</tr>
+					<tr>
+						<td>users</td>
+						<td>Array</td>
+						<td>用户信息。<br>[{id:用户id,user:用户名,name:姓名,tel:手机,email:邮箱,sendMail:是否订阅邮件提醒,team:所在组别,teamid:组别id},…]</td>
+					</tr>
+					<tr>
+						<td>message</td>
+						<td>String</td>
+						<td>提示</td>
+					</tr>
+				</tbody>
+			</table>
+
+## 获取组别信息
+ - 描述：获取现有分组
+ - 传入参数： <table>
+				<thead>
+					<tr>
+						<th>参数</th>
+						<td>类型</td>
+						<th>必填</th>
+						<th>说明</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>act</td>
+						<td>String</td>
+						<td>是</td>
+						<td>getteam</td>
+					</tr>
+					<tr>
+						<td>ts</td>
+						<td>Number</td>
+						<td>是</td>
+						<td>时间戳。传值+new Date()即可</td>
+					</tr>
+					<tr>
+						<td>callback</td>
+						<td>Function</td>
+						<td>否</td>
+						<td>jsonp</td>
+					</tr>
+				</tbody>
+			</table>
+ - 返回数据：<table>
+				<thead>
+					<tr>
+						<th>参数</th>
+						<td>类型</td>
+						<th>说明</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>status</td>
+						<td>Number</td>
+						<td>0为失败，1为成功</td>
+					</tr>
+					<tr>
+						<td>teams</td>
+						<td>Array</td>
+						<td>组别信息。<br>[{id:组别id,name:组名,leaders:组长id},…]</td>
+					</tr>
+					<tr>
+						<td>message</td>
+						<td>String</td>
+						<td>提示</td>
+					</tr>
+				</tbody>
+			</table>
+
+## 获取产品线信息
+ - 描述：获取现有产品线
+ - 传入参数： <table>
+				<thead>
+					<tr>
+						<th>参数</th>
+						<td>类型</td>
+						<th>必填</th>
+						<th>说明</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>act</td>
+						<td>String</td>
+						<td>是</td>
+						<td>getline</td>
+					</tr>
+					<tr>
+						<td>ts</td>
+						<td>Number</td>
+						<td>是</td>
+						<td>时间戳。传值+new Date()即可</td>
+					</tr>
+					<tr>
+						<td>callback</td>
+						<td>Function</td>
+						<td>否</td>
+						<td>jsonp</td>
+					</tr>
+				</tbody>
+			</table>
+ - 返回数据：<table>
+				<thead>
+					<tr>
+						<th>参数</th>
+						<td>类型</td>
+						<th>说明</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>status</td>
+						<td>Number</td>
+						<td>0为失败，1为成功</td>
+					</tr>
+					<tr>
+						<td>lines</td>
+						<td>Array</td>
+						<td>产品线信息。<br>[{id:产品线id,name:产品线名字,terminal:产品线归属#PC或者app#},…]</td>
+					</tr>
+					<tr>
+						<td>message</td>
+						<td>String</td>
+						<td>提示</td>
+					</tr>
+				</tbody>
+			</table>
+
+## 获取工单信息
+ - 描述：根据不同的筛选条件返回工单信息，不填写条件则返回所有工单
+ - 传入参数： <table>
+				<thead>
+					<tr>
+						<th>参数</th>
+						<td>类型</td>
+						<th>必填</th>
+						<th>说明</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>act</td>
+						<td>String</td>
+						<td>是</td>
+						<td>gettask</td>
+					</tr>
+					<tr>
+						<td>id</td>
+						<td>Number</td>
+						<td>否</td>
+						<td>工单id</td>
+					</tr>
+					<tr>
+						<td>productline</td>
+						<td>Number</td>
+						<td>否</td>
+						<td>产品线id</td>
+					</tr>
+					<tr>
+						<td>createpeople</td>
+						<td>Number</td>
+						<td>否</td>
+						<td>创建工单人id</td>
+					</tr>
+					<tr>
+						<td>urgency</td>
+						<td>Number</td>
+						<td>否</td>
+						<td>是否为急单。1为急，0为正常</td>
+					</tr>
+					<tr>
+						<td>delegatepeople</td>
+						<td>Number</td>
+						<td>否</td>
+						<td>被委托人即要去做该工单人的id</td>
+					</tr>
+					<tr>
+						<td>kind</td>
+						<td>Number</td>
+						<td>否</td>
+						<td>工单主类型。1为PC，2为多app</td>
+					</tr>
+					<tr>
+						<td>subkind</td>
+						<td>Number</td>
+						<td>否</td>
+						<td>组别类型。1为交互，2为视觉，3为前端，4为多app</td>
+					</tr>
+					<tr>
+						<td>ts</td>
+						<td>Number</td>
+						<td>是</td>
+						<td>时间戳。传值+new Date()即可</td>
+					</tr>
+					<tr>
+						<td>callback</td>
+						<td>Function</td>
+						<td>否</td>
+						<td>jsonp</td>
+					</tr>
+				</tbody>
+			</table>
+ - 返回数据：<table>
+				<thead>
+					<tr>
+						<th>参数</th>
+						<td>类型</td>
+						<th>说明</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>status</td>
+						<td>Number</td>
+						<td>0为失败，1为成功</td>
+					</tr>
+					<tr>
+						<td>tasks</td>
+						<td>Array</td>
+						<td>工单信息。<br>[{id:工单id,name:工单名,createtime:工单创建时间,productline:工单所属产品线id,createpeople:创建工单者id,chargepeople:工单需求方,plantime:工单上线时间,urgency:是否为急单,status:工单状态#0未开始，1已开始，2暂停，3完成，4待指派，5任务终止#,worktime:工作量#单位天数#,delegatepeople:被委托人id,kind:工单主类型#1PC2为多app#,subkind:工单所属小组:1为交互,2为视图,3为前端,4为多app},…]</td>
+					</tr>
+					<tr>
+						<td>message</td>
+						<td>String</td>
+						<td>提示</td>
+					</tr>
+				</tbody>
+			</table>
+
+## 获取工单评论信息
+ - 描述：根据工单id返回该工单的评论
+ - 传入参数： <table>
+				<thead>
+					<tr>
+						<th>参数</th>
+						<td>类型</td>
+						<th>必填</th>
+						<th>说明</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>act</td>
+						<td>String</td>
+						<td>是</td>
+						<td>gettasklog</td>
+					</tr>
+					<tr>
+						<td>tid</td>
+						<td>Number</td>
+						<td>是</td>
+						<td>工单id</td>
+					</tr>
+					<tr>
+						<td>ts</td>
+						<td>Number</td>
+						<td>是</td>
+						<td>时间戳。传值+new Date()即可</td>
+					</tr>
+					<tr>
+						<td>callback</td>
+						<td>Function</td>
+						<td>否</td>
+						<td>jsonp</td>
+					</tr>
+				</tbody>
+			</table>
+ - 返回数据：<table>
+				<thead>
+					<tr>
+						<th>参数</th>
+						<td>类型</td>
+						<th>说明</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>status</td>
+						<td>Number</td>
+						<td>0为失败，1为成功</td>
+					</tr>
+					<tr>
+						<td>logs</td>
+						<td>Array</td>
+						<td>工单评论信息。<br>[{id:评论id,taskid:工单id,createpeople:创建该评论者id,time:创建评论时间,createpeople:创建工单者id,log:评论类型,comment:评论内容},…]</td>
+					</tr>
+					<tr>
+						<td>message</td>
+						<td>String</td>
+						<td>提示</td>
+					</tr>
+				</tbody>
+			</table>
